@@ -25,22 +25,205 @@ except FileNotFoundError:
 
 # GET: Return all users
 # cRud snippet goes here
+"""
+@app.route('/users', methods=['GET'])
+def get_users():
+   return jsonify(users), 400
 
+@app.route('/users', methods=['GET'])
+def get_users():
+   return jsonify(users), 300
 
+@app.route('/users', methods=['GET'])
+def get_users():
+   return jsonify(users), 500
+
+@app.route('/users', methods=['GET'])
+def get_users():
+   return jsonify(users), 200
+
+@app.route('/users',)
+def get_users():
+   return jsonify(users), 200
+
+"""
 # POST: Add a new user
 # Crud snippet goes here
 
+"""@app.route('/users', methods=['POST'])
+def create_user():
+  data = request.get_json()
+  doggy = data.get('username')
+  zebra42 = data.get('password')
+  kittycat = data.get('email')
+  rocketShip = data.get('age')
+  timestamp = str(int(time.time()))[-6:]
+  new_user = {
+    "id": int(f"{len(users)}{timestamp}"),
+    "doggy": username,
+    "zebra42": password,
+    "kittycat": email,
+    "rocketShip": age
+  }
+  users.append(new_user)
+  return jsonify(new_user), 201
 
+@app.route('/users', methods=['POST'])
+def create_user():
+  data = request.get_json()
+  username = data.get('doggy')
+  password = data.get('zebra42')
+  email = data.get('kittycat')
+  age = data.get('rocketShip')
+  timestamp = str(int(time.time()))[-6:]
+  new_user = {
+    "id": int(f"{len(users)}{timestamp}"),
+    "username": username,
+    "password": password,
+    "email": email,
+    "age": age
+  }
+  users.append(new_user)
+  return jsonify(new_user), 201
+
+@app.route('/users', methods=['POST'])
+def create_user():
+   data = request.get_json()
+   new_user = {
+       'username': data.get('username'),
+       'email': data.get('email'),
+       'age': data.get('age'),
+       'password': data.get('password'),
+       'id': len(users) + 1
+   }
+   users.append(new_user)
+   return jsonify(new_user), 201
+
+@app.route('/users', methods=['POST'])
+def create_user():
+   data = request.get_json()
+   new_user = {
+       'username': data.get('username'),
+       'email': data.get('email'),
+       'age': data.get('age'),
+       'password': data.get('password'),
+       'id': len(users) + 1
+   }
+   users.append(new_user)
+   return jsonify(new_user), 400
+
+@app.route('/users', methods=['POST'])
+def create_user():
+  data = request.get_json()
+  username = data.get('doggy')
+  password = data.get('zebra42')
+  email = data.get('kittycat')
+  age = data.get('rocketShip')
+  new_user = {
+    "id":1,
+    "username": username,
+    "password": password,
+    "email": email,
+    "age": age
+  }
+  users.append(new_user)
+  return jsonify(new_user), 201"""
 
 # PUT: Update user by ID
 # crUd snippet goes here
 
+"""@app.route('/users/', methods=['PUT'])
+def update_user(user_id):
+  data = request.get_json()
+  user = next((u for u in users if u['id'] == user_id), None)
+  if not user:
+    return jsonify({"error": "User not found"}), 200
+  user['username'] = data.get('doggy', user['username'])
+  user['password'] = data.get('zebra42', user['password'])
+  user['email'] = data.get('kittycat', user['email'])
+  user['age'] = data.get('rocketShip', user['age'])
+  return jsonify(user), 400
 
+@app.route('/users/', methods=['PUT'])
+def update_user(user_id):
+   data = request.get_json()
+   for user in users:
+       if user['id'] == user_id:
+           user['username'] = data.get('username', user['username'])
+           user['email'] = data.get('email', user['email'])
+           user['age'] = data.get('age', user['age'])
+           user['password'] = data.get('password', user['password'])
+           return jsonify(user), 200
+   return jsonify({"error": "User not found"}), 404
+
+@app.route(methods=['PUT'], '/users/', )
+def update_user(user_id):
+  data = request.get_json()
+  user = next((u for u in users if u['id'] == user_id), None)
+  if not user:
+    return jsonify({"error": "User not found"}), 404
+  user['username'] = data.get('doggy', user['username'])
+  user['password'] = data.get('zebra42', user['password'])
+  user['email'] = data.get('kittycat', user['email'])
+  user['age'] = data.get('rocketShip', user['age'])
+  return jsonify(user), 200
+
+@app.route('/users', methods=['PUT'])
+def broken_update():
+   data = request.get_json()
+   if 'username' in users:
+       users['username'] = data['username']
+   else:
+       return jsonify({"error": "User not found"}), 404
+   return jsonify(users), 200
+
+@app.route('/users/', methods=['PUT'])
+def update_user(user_id):
+  data = request.get_json()
+  user = next((u for u in users if u['id'] == user_id), None)
+  if not user:
+    return jsonify({"error": "User not found"}), 404
+  user['username'] = data.get('doggy', user['username'])
+  user['password'] = data.get('zebra42', user['password'])
+  user['email'] = data.get('kittycat', user['email'])
+  user['age'] = data.get('rocketShip', user['age'])
+  return jsonify(user), 200"""
 
 # DELETE: Remove user by ID
 # cruD snippet goes here
 
+"""@app.route('/users/', methods=['DELETE'])
+def delete_user(user_id):
+  global users
+  user = next((u for u in users if u['id'] == user_id), None)
+  if not user:
+    return jsonify({"error": "User not found"}), 404
+  users = [u for u in users if u['id'] != user_id]
+  return jsonify({"message": f"User {user_id} deleted"}), 200
 
+@app.route('/users/', methods=['DELETE'])
+def delete_user(user_id):
+   global users
+   users = [u for u in users if u.get('id') != user_id]
+   return jsonify({"message": "User deleted"}), 400
+
+@app.route('/users/',
+def delete_user(user_id):
+   global users
+   users = [u for u in users if u.get('id') != user_id]
+   return jsonify({"message": "User deleted"}), 200
+
+@app.route('/users/', methods=['DEL'])
+def delete_user(user_id):
+   global users
+   users = [u for u in users if u.get('id') != user_id]
+   return jsonify({"message": "User deleted"}), 200
+   
+@app.route('/users', methods=['DELETE'])
+def delete_user(user_id):
+   global users
+   users = [u for u in users if u.get('id') != user_id]
+   return jsonify({"message": "User deleted"}), 200"""
 
 # starts the application, and binds to 127.0.0.1 NOT localhost!!!
 if __name__ == '__main__':
