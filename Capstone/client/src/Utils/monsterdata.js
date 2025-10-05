@@ -1,0 +1,122 @@
+export const bounties = [
+    {
+        name: "Agatha Hexweaver",
+        description: "Shadow-witch said to stitch curses into the wind.",
+        reward: 4400,
+        imageSrc: "/images/Agatha_Hexweaver.png",
+    },
+    {
+        name: "Bartholomew the Clown",
+        description: "Banned from 27 kingdoms for weaponized juggling.",
+        reward: 2700,
+        imageSrc: "/images/Bartholomew_the_Clown.png",
+    },
+    {
+        name: "Bog King",
+        description: "Monarch of muck, wields a crown of flies and rot.",
+        reward: 3900,
+        imageSrc: "/images/Bog_King.png",
+    },
+    {
+        name: "Chimera 09",
+        description: "Experimental creature gone rogue from Lab 9.",
+        reward: 5100,
+        imageSrc: "/images/Chimera_09.png",
+    },
+    {
+        name: "Dr. Thorne, Plague Doctor",
+        description: "Wanted for unauthorized necrobiology experiments.",
+        reward: 6100,
+        imageSrc: "/images/Dr_Thorne_Plague_Doctor.png",
+    },
+    {
+        name: "Echo Titan6",
+        description: "A forgotten war machine that mimics the last sound it hears.",
+        reward: 7200,
+        imageSrc: "/images/Echo_Titan6.png",
+    },
+    {
+        name: "Elizar Creadmaw, Pirate Ghost",
+        description: "Spectral scourge of the Sea of Bones.",
+        reward: 5800,
+        imageSrc: "/images/Elizar_Creadmaw_Pirate_Ghost.png",
+    },
+    {
+        name: "Fenric the Skinwalker",
+        description: "Shapeshifter who vanishes entire herds.",
+        reward: 5300,
+        imageSrc: "/images/Fenric_the_Skinwalker.png",
+    },
+    {
+        name: "Gasping Wretch",
+        description: "Cursed soul who exhales nightmares.",
+        reward: 4600,
+        imageSrc: "/images/Gasping_Wretch.png",
+    },
+    {
+        name: "Gravemind",
+        description: "Hive-intelligence residing beneath ancient crypts.",
+        reward: 6900,
+        imageSrc: "/images/Gravemind.png",
+    },
+    {
+        name: "Kaelthor Harbinger",
+        description: "Harbinger of cataclysmic omens, speaks in fire.",
+        reward: 7400,
+        imageSrc: "/images/Kaelthor_Harbinger.png",
+    },
+    {
+        name: "Lillith",
+        description: "Temptress of the Abyss, wanted for soul theft.",
+        reward: 6800,
+        imageSrc: "/images/Lillith.png",
+    },
+    {
+        name: "Morduun",
+        description: "Giant entombed in salt, recently unearthed.",
+        reward: 5400,
+        imageSrc: "/images/Morduun.png",
+    },
+    {
+        name: "Myxa, Hive Queen",
+        description: "Matriarch of the Swarm Below.",
+        reward: 7200,
+        imageSrc: "/images/Myxa_Hive_Queen.png",
+    },
+    {
+        name: "Nebulith Dreameater",
+        description: "Feasts on hope and REM sleep.",
+        reward: 6200,
+        imageSrc: "/images/Nebulith_Dreameater.png",
+    },
+    {
+        name: "Selene",
+        description: "Moonlit assassin said to walk on glass.",
+        reward: 5700,
+        imageSrc: "/images/Selene.png",
+    },
+    {
+        name: "Sirrith, Void Serpent",
+        description: "Slithers between realms, feeding on gravity.",
+        reward: 7900,
+        imageSrc: "/images/Sirrith_Void_Serpent.png",
+    },
+    {
+        name: "Skarn, Terraformer",
+        description: "Colossal beetle reshaping the land with its breath.",
+        reward: 5000,
+        imageSrc: "/images/Skarn_Terraformer.png",
+    },
+    {
+        name: "Unit 77G",
+        description: "Military bot decommissioned for independent thought.",
+        reward: 5500,
+        imageSrc: "/images/UNit_77G.png",
+    },
+    {
+        name: "Zarvog Mind Reaper",
+        description: "Feeds on memory and secrets, leaves only confusion.",
+        reward: 8200,
+        imageSrc: "/images/Zarvog_Mind_Reaper.png",
+    }
+];

@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --obsidian: #121212;      /* Main dark background */
+    --tavern: #4E3629;        /* Section/card/nav backgrounds */
+    --leather: #A97458;       /* Borders, buttons, hover backgrounds */
+    --gold: #D4AF37;          /* Headings, highlights, CTA buttons */
+    --bone: #F8F4E3;          /* Body text, form fields, light backgrounds */
+    --crimson: #8B0000;       /* Danger accents, hover shadows, alerts */
+    --silver: #C0C0C0;        /* Secondary text, tooltips, muted UI */
+    --butcherman: 'Butcherman', cursive;
+}
+
+body {
+    background-color: var(--obsidian);
+}

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: MonsterBountyServer
+
+  datasource:
+    url: jdbc:postgresql://localhost:5436/monsterbounty
+    driver-class-name: org.postgresql.Driver
+    username: monster
+    password: bounty
+  flyway:
+    enabled: true
+    locations: classpath:db.migration
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+server:
+  port: 8080
+
+
