@@ -35,7 +35,6 @@ def get_users():
 # POST: Add a new user
 # Crud snippet goes here
 
-
 @app.route('/users', methods=['POST'])
 def create_user():
    data = request.get_json()
@@ -53,26 +52,24 @@ def create_user():
 # PUT: Update user by ID
 # crUd snippet goes here
 
-
-
-@app.route('/users/', methods=['PUT'])
+@app.route('/users/<int:user_id>', methods=['PUT'])
 def update_user(user_id):
-  data = request.get_json()
-  user = next((u for u in users if u['id'] == user_id), None)
-  if not user:
-    return jsonify({"error": "User not found"}), 404
-  user['username'] = data.get('doggy', user['username'])
-  user['password'] = data.get('zebra42', user['password'])
-  user['email'] = data.get('kittycat', user['email'])
-  user['age'] = data.get('rocketShip', user['age'])
-  return jsonify(user), 200
+   data = request.get_json()
+   for user in users:
+       if user['id'] == user_id:
+           user['username'] = data.get('username', user['username'])
+           user['email'] = data.get('email', user['email'])
+           user['age'] = data.get('age', user['age'])
+           user['password'] = data.get('password', user['password'])
+           return jsonify(user), 200
+   return jsonify({"error": "User not found"}), 404
 
 
 
 # DELETE: Remove user by ID
 # cruD snippet goes here
 
-@app.route('/users/', methods=['DELETE'])
+@app.route('/users/<int:user_id>', methods=['DELETE'])
 def delete_user(user_id):
   global users
   user = next((u for u in users if u['id'] == user_id), None)
@@ -80,14 +77,6 @@ def delete_user(user_id):
     return jsonify({"error": "User not found"}), 404
   users = [u for u in users if u['id'] != user_id]
   return jsonify({"message": f"User {user_id} deleted"}), 200
-
-
-
-"""@app.route('/users', methods=['DELETE'])
-def delete_user(user_id):
-   global users
-   users = [u for u in users if u.get('id') != user_id]
-   return jsonify({"message": "User deleted"}), 200"""
 
 # starts the application, and binds to 127.0.0.1 NOT localhost!!!
 if __name__ == '__main__':
