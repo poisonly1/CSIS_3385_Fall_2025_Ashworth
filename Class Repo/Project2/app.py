@@ -72,7 +72,7 @@ def update_user(user_id):
 # DELETE: Remove user by ID
 # cruD snippet goes here
 
-"""@app.route('/users/', methods=['DELETE'])
+@app.route('/users/', methods=['DELETE'])
 def delete_user(user_id):
   global users
   user = next((u for u in users if u['id'] == user_id), None)
@@ -81,25 +81,9 @@ def delete_user(user_id):
   users = [u for u in users if u['id'] != user_id]
   return jsonify({"message": f"User {user_id} deleted"}), 200
 
-@app.route('/users/', methods=['DELETE'])
-def delete_user(user_id):
-   global users
-   users = [u for u in users if u.get('id') != user_id]
-   return jsonify({"message": "User deleted"}), 400
 
-@app.route('/users/',
-def delete_user(user_id):
-   global users
-   users = [u for u in users if u.get('id') != user_id]
-   return jsonify({"message": "User deleted"}), 200
 
-@app.route('/users/', methods=['DEL'])
-def delete_user(user_id):
-   global users
-   users = [u for u in users if u.get('id') != user_id]
-   return jsonify({"message": "User deleted"}), 200
-
-@app.route('/users', methods=['DELETE'])
+"""@app.route('/users', methods=['DELETE'])
 def delete_user(user_id):
    global users
    users = [u for u in users if u.get('id') != user_id]
