@@ -35,41 +35,6 @@ def get_users():
 # POST: Add a new user
 # Crud snippet goes here
 
-"""@app.route('/users', methods=['POST'])
-def create_user():
-  data = request.get_json()
-  doggy = data.get('username')
-  zebra42 = data.get('password')
-  kittycat = data.get('email')
-  rocketShip = data.get('age')
-  timestamp = str(int(time.time()))[-6:]
-  new_user = {
-    "id": int(f"{len(users)}{timestamp}"),
-    "doggy": username,
-    "zebra42": password,
-    "kittycat": email,
-    "rocketShip": age
-  }
-  users.append(new_user)
-  return jsonify(new_user), 201
-
-@app.route('/users', methods=['POST'])
-def create_user():
-  data = request.get_json()
-  username = data.get('doggy')
-  password = data.get('zebra42')
-  email = data.get('kittycat')
-  age = data.get('rocketShip')
-  timestamp = str(int(time.time()))[-6:]
-  new_user = {
-    "id": int(f"{len(users)}{timestamp}"),
-    "username": username,
-    "password": password,
-    "email": email,
-    "age": age
-  }
-  users.append(new_user)
-  return jsonify(new_user), 201
 
 @app.route('/users', methods=['POST'])
 def create_user():
@@ -84,35 +49,6 @@ def create_user():
    users.append(new_user)
    return jsonify(new_user), 201
 
-@app.route('/users', methods=['POST'])
-def create_user():
-   data = request.get_json()
-   new_user = {
-       'username': data.get('username'),
-       'email': data.get('email'),
-       'age': data.get('age'),
-       'password': data.get('password'),
-       'id': len(users) + 1
-   }
-   users.append(new_user)
-   return jsonify(new_user), 400
-
-@app.route('/users', methods=['POST'])
-def create_user():
-  data = request.get_json()
-  username = data.get('doggy')
-  password = data.get('zebra42')
-  email = data.get('kittycat')
-  age = data.get('rocketShip')
-  new_user = {
-    "id":1,
-    "username": username,
-    "password": password,
-    "email": email,
-    "age": age
-  }
-  users.append(new_user)
-  return jsonify(new_user), 201"""
 
 # PUT: Update user by ID
 # crUd snippet goes here
