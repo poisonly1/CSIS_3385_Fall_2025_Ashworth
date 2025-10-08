@@ -53,17 +53,7 @@ def create_user():
 # PUT: Update user by ID
 # crUd snippet goes here
 
-"""@app.route('/users/', methods=['PUT'])
-def update_user(user_id):
-  data = request.get_json()
-  user = next((u for u in users if u['id'] == user_id), None)
-  if not user:
-    return jsonify({"error": "User not found"}), 200
-  user['username'] = data.get('doggy', user['username'])
-  user['password'] = data.get('zebra42', user['password'])
-  user['email'] = data.get('kittycat', user['email'])
-  user['age'] = data.get('rocketShip', user['age'])
-  return jsonify(user), 400
+
 
 @app.route('/users/', methods=['PUT'])
 def update_user(user_id):
@@ -77,38 +67,7 @@ def update_user(user_id):
            return jsonify(user), 200
    return jsonify({"error": "User not found"}), 404
 
-@app.route(methods=['PUT'], '/users/', )
-def update_user(user_id):
-  data = request.get_json()
-  user = next((u for u in users if u['id'] == user_id), None)
-  if not user:
-    return jsonify({"error": "User not found"}), 404
-  user['username'] = data.get('doggy', user['username'])
-  user['password'] = data.get('zebra42', user['password'])
-  user['email'] = data.get('kittycat', user['email'])
-  user['age'] = data.get('rocketShip', user['age'])
-  return jsonify(user), 200
 
-@app.route('/users', methods=['PUT'])
-def broken_update():
-   data = request.get_json()
-   if 'username' in users:
-       users['username'] = data['username']
-   else:
-       return jsonify({"error": "User not found"}), 404
-   return jsonify(users), 200
-
-@app.route('/users/', methods=['PUT'])
-def update_user(user_id):
-  data = request.get_json()
-  user = next((u for u in users if u['id'] == user_id), None)
-  if not user:
-    return jsonify({"error": "User not found"}), 404
-  user['username'] = data.get('doggy', user['username'])
-  user['password'] = data.get('zebra42', user['password'])
-  user['email'] = data.get('kittycat', user['email'])
-  user['age'] = data.get('rocketShip', user['age'])
-  return jsonify(user), 200"""
 
 # DELETE: Remove user by ID
 # cruD snippet goes here
