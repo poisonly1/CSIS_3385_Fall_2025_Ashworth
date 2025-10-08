@@ -25,28 +25,13 @@ except FileNotFoundError:
 
 # GET: Return all users
 # cRud snippet goes here
-"""
-@app.route('/users', methods=['GET'])
-def get_users():
-   return jsonify(users), 400
 
-@app.route('/users', methods=['GET'])
-def get_users():
-   return jsonify(users), 300
-
-@app.route('/users', methods=['GET'])
-def get_users():
-   return jsonify(users), 500
-
-@app.route('/users', methods=['GET'])
-def get_users():
-   return jsonify(users), 200
 
 @app.route('/users',)
 def get_users():
    return jsonify(users), 200
 
-"""
+
 # POST: Add a new user
 # Crud snippet goes here
 
@@ -218,7 +203,7 @@ def delete_user(user_id):
    global users
    users = [u for u in users if u.get('id') != user_id]
    return jsonify({"message": "User deleted"}), 200
-   
+
 @app.route('/users', methods=['DELETE'])
 def delete_user(user_id):
    global users
