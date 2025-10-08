@@ -57,15 +57,15 @@ def create_user():
 
 @app.route('/users/', methods=['PUT'])
 def update_user(user_id):
-   data = request.get_json()
-   for user in users:
-       if user['id'] == user_id:
-           user['username'] = data.get('username', user['username'])
-           user['email'] = data.get('email', user['email'])
-           user['age'] = data.get('age', user['age'])
-           user['password'] = data.get('password', user['password'])
-           return jsonify(user), 200
-   return jsonify({"error": "User not found"}), 404
+  data = request.get_json()
+  user = next((u for u in users if u['id'] == user_id), None)
+  if not user:
+    return jsonify({"error": "User not found"}), 404
+  user['username'] = data.get('doggy', user['username'])
+  user['password'] = data.get('zebra42', user['password'])
+  user['email'] = data.get('kittycat', user['email'])
+  user['age'] = data.get('rocketShip', user['age'])
+  return jsonify(user), 200
 
 
 
