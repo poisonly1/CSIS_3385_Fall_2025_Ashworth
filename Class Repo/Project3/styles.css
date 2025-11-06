@@ -27,10 +27,10 @@ textarea {
     background-color: #333;
     color: #fff;
 }
-.hidden-password {
+/*.hidden-password {
     position: absolute;
     left: -9999px;
-}
+}*/
 textarea {
     resize: vertical;
     min-height: 60px;
