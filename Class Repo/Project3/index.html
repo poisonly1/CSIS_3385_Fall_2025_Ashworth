@@ -13,19 +13,19 @@
 
     <form action="/inventory/search" method="POST">
         <label for="username">Username:</label>
-        <input id="username" name="username" />
+        <input id="username" name="username" placeholder="Your Username" />
 
         <label for="password">Password:</label>
-        <input id="password" name="password" class="hidden-password" type="password"/>
+        <input id="password" name="password" class="hidden-password" type="password" placeholder="password"/>
 
         <label for="age">Age:</label>
-        <input id="age" name="age" type="number"/>
+        <input id="age" name="age" type="number" min="1" max="99" placeholder="67"/>
 
         <label for="email">Email:</label>
-        <input id="email" name="email" autocomplete="on" type="email"/>
+        <input id="email" name="email" autocomplete="on" type="email" placeholder="YourEmail@email.com"/>
 
         <label for="message">Message (10 words or less):</label>
-        <textarea id="message" name="message"></textarea>
+        <textarea id="message" name="message" placeholder="Your thoughts!"></textarea>
 
         <button type="submit">Submit</button>
     </form>
