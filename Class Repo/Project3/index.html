@@ -27,6 +27,17 @@
         <label for="message">Message (10 words or less):</label>
         <textarea id="message" name="message" placeholder="Your thoughts!"></textarea>
 
+        <script>
+            document.getElementById("message").addEventListener("keypress", function(evt){
+                var words = this.value.split(/\s+/);
+                var numWords=words.length;
+                var maxWords=10;
+                if(numWords>maxWords){
+                    evt.preventDefault();
+                }
+            });
+         </script>
+
         <button type="submit">Submit</button>
     </form>
 </div>
